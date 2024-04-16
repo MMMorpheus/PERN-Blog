@@ -1,0 +1,38 @@
+{
+	"include": ["./src/**.*"],
+	"exclude": ["./node_modules/"],
+	"compilerOptions": {
+		/* Language and Environment */
+		"target": "es2022",
+		"lib": ["ESNext"],
+
+		/* Modules */
+		"module": "NodeNext",
+		"rootDir": "./src",
+		"moduleResolution": "NodeNext",
+		"resolveJsonModule": true,
+
+		/* JavaScript Support */
+		"allowJs": true,
+		"checkJs": true,
+
+		/* Emit */
+		"sourceMap": true,
+
+		"outDir": "./dist",
+		"removeComments": true,
+
+		/* Interop Constraints */
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+
+		/* Type Checking */
+		"strict": true,
+		"skipLibCheck": true
+	},
+	"ts-node": {
+		"experimentalSpecifierResolution": "node",
+		"transpileOnly": true,
+		"esm": true
+	}
+}
