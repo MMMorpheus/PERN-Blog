@@ -1,5 +1,5 @@
 import { TagsRepository } from '../repository';
-import type { ProcessTags } from '../../types';
+import type { ProcessTags } from '../types';
 
 export class TagsService {
 	public static processTags: ProcessTags = async (id, tittles) => {

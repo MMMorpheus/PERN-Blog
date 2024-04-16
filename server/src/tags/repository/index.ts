@@ -4,7 +4,7 @@ import type {
 	CreateTags,
 	GetUsedTags,
 	ConnectWithPost,
-} from '../../types';
+} from '../types';
 
 export class TagsRepository {
 	public static createMany: CreateTags = async (tittles) => {
