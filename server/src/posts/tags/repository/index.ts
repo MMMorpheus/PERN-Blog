@@ -43,18 +43,3 @@ export class TagsRepository {
 		);
 	};
 }
-
-// 2. **Create a new Comment and connect it to the Post:**
-// ```js
-// const newComment = await prisma.comment.create({
-//   data: {
-//     content: 'Your Comment Content',
-//     post: {
-//       connect: {
-//         id: newPost.id,
-//       },
-//     },
-//     // other fields...
-//   },
-// });
-// ```

@@ -1,4 +1,5 @@
 import 'dotenv/config';
+import 'module-alias/register';
 
 import { ExpressApp } from './core/express/index.js';
 import { rootRouter } from './router/index.js';

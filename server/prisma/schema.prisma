@@ -41,7 +41,7 @@ model Post {
   body      String
   views     Int      @default(0)
   rating    Int      @default(0)
-  author    User     @relation(fields: [userId], references: [id])
+  author    User     @relation(fields: [userId], references: [id], onUpdate: Cascade, onDelete: Cascade)
   userId    Int      @map("user_id")
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
@@ -58,9 +58,9 @@ model Comment {
   body      String
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
-  User      User     @relation(fields: [userId], references: [id])
+  User      User     @relation(fields: [userId], references: [id], onUpdate: Cascade, onDelete: Cascade)
   userId    Int      @map("user_id")
-  Post      Post     @relation(fields: [postId], references: [id])
+  Post      Post     @relation(fields: [postId], references: [id], onUpdate: Cascade, onDelete: Cascade)
   postId    Int      @map("post_id")
 
   @@map("comments")
@@ -75,9 +75,9 @@ model Tag {
 }
 
 model TagsToPosts {
-  post       Post     @relation(fields: [postId], references: [id])
+  post       Post     @relation(fields: [postId], references: [id], onUpdate: Cascade, onDelete: Cascade)
   postId     Int      @map("post_id")
-  tag        Tag      @relation(fields: [tagId], references: [id])
+  tag        Tag      @relation(fields: [tagId], references: [id], onUpdate: Cascade, onDelete: Cascade)
   tagId      Int      @map("tag_id")
   assignedAt DateTime @default(now()) @map("assigned_at")
 
@@ -86,9 +86,9 @@ model TagsToPosts {
 }
 
 model Favorites {
-  user   User @relation(fields: [userId], references: [id])
+  user   User @relation(fields: [userId], references: [id], onUpdate: Cascade, onDelete: Cascade)
   userId Int  @map("user_id")
-  post   Post @relation(fields: [postId], references: [id])
+  post   Post @relation(fields: [postId], references: [id], onUpdate: Cascade, onDelete: Cascade)
   postId Int  @map("post_id")
 
   @@id([userId, postId])
